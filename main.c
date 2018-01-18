@@ -13,8 +13,8 @@ int main (void) {
   char cmd;
   uart_init(true); // setup uart and bind to stdio
   shift_init();
-  DDR_CMD |= _BV(CMD__RD) | _BV(CMD_CLK) | _BV(CMD__CS) | _BV(CMD__WR) | _BV(CMD__RST);
-  PORT_CMD = _BV(CMD__RD) | _BV(CMD__CS) | _BV(CMD__WR) |                _BV(CMD__RST);
+  DDR_CMD |= _BV(CMD__RD) | _BV(CMD__CS) | _BV(CMD__WR) | _BV(CMD__RST) | _BV(CMD_CLK);
+  PORT_CMD = _BV(CMD__RD) | _BV(CMD__CS) | _BV(CMD__WR) | _BV(CMD__RST);
   while(true){
     cmd=getchar();
     if (cmd=='\r' || cmd=='\n')
