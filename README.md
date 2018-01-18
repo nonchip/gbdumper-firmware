@@ -10,6 +10,8 @@
     make set_fuses
     make upload_firmware
 
+you might have to edit the `CMakeLists.txt` file to accomodate for your programmer/port/etc.
+
 # Protocol
 
 * serial (via ftdi, so `/dev/ttyUSB*` or the likes) 9600baud 8n1
