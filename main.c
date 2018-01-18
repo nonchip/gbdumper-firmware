@@ -25,20 +25,20 @@ int main (void) {
     switch(cmd){
       case 'C':
         /* dummy statement for label */;
-        int v=0;
+        int v=_BV(CMD__WR) | _BV(CMD__RD) | _BV(CMD__CS) | _BV(CMD__RST);
         bool reading=true;
         char c;
         while(reading){
           c=getchar();
           switch(c){
             case 'w':
-              v |= _BV(CMD__WR);
+              v &= ~ _BV(CMD__WR);
             case 'r':
-              v |= _BV(CMD__RD);
+              v &= ~ _BV(CMD__RD);
             case 'c':
-              v |= _BV(CMD__CS);
+              v &= ~ _BV(CMD__CS);
             case 'R':
-              v |= _BV(CMD__RST);
+              v &= ~ _BV(CMD__RST);
             case 'C':
               v |= _BV(CMD_CLK);
             default:
