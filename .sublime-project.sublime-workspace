@@ -1,0 +1,1024 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"uint",
+				"uint8_t"
+			],
+			[
+				"GET_",
+				"GET_MEM_RESP"
+			],
+			[
+				"inst",
+				"instruction_map"
+			],
+			[
+				"stru",
+				"struct-unit\tstruct …;"
+			],
+			[
+				"st",
+				"struct\tstruct … { … }"
+			],
+			[
+				"SPI",
+				"SPIDER_FOLDER_RAW"
+			],
+			[
+				"tag_g",
+				"tag_getter"
+			],
+			[
+				"add_tra",
+				"add_track_with_tags"
+			],
+			[
+				"Que",
+				"QueuePlayer"
+			],
+			[
+				"walk",
+				"walkAST_extractImportant"
+			],
+			[
+				"par",
+				"param\t@param"
+			],
+			[
+				"cla",
+				"class\t@class"
+			],
+			[
+				"class",
+				"class\tclass name extends..."
+			],
+			[
+				"I",
+				"I_CONFIG_NGX_HTTP_SERVERS_I"
+			],
+			[
+				"EXPNIL_",
+				"EXPNIL_type"
+			],
+			[
+				"EXPNIL",
+				"EXPNIL_type"
+			],
+			[
+				"las",
+				"lastPID"
+			],
+			[
+				"last",
+				"lastPath"
+			],
+			[
+				"LIB",
+				"LIB_PATH"
+			],
+			[
+				"GLAD_",
+				"GLAD_GENSOURCES"
+			],
+			[
+				"noti",
+				"notifycount"
+			],
+			[
+				"not",
+				"notifycount"
+			],
+			[
+				"sys",
+				"sysinfop"
+			],
+			[
+				"times",
+				"timestamp"
+			],
+			[
+				"BY",
+				"BYTE_TO_BINARY"
+			],
+			[
+				"BYT",
+				"BYTE_TO_BINARY_PATTERN"
+			],
+			[
+				"sendB",
+				"sendByte"
+			],
+			[
+				"sl",
+				"sleeptime"
+			],
+			[
+				"slee",
+				"sleeptimev"
+			],
+			[
+				"FF_IM",
+				"FF_IMAGE_pixel"
+			],
+			[
+				"FF_IMA",
+				"FF_IMAGE_header"
+			],
+			[
+				"gra",
+				"gradStepv"
+			],
+			[
+				"grad",
+				"gradStop"
+			],
+			[
+				"gradS",
+				"gradStop"
+			],
+			[
+				"i",
+				"iPartLft"
+			],
+			[
+				"u",
+				"uint16_t"
+			],
+			[
+				"show",
+				"showBNum"
+			],
+			[
+				"back",
+				"net_backup_isystems_at"
+			],
+			[
+				"net",
+				"net_www2_isystems_at"
+			],
+			[
+				"api_",
+				"api_post"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "CMakeLists.txt",
+			"settings":
+			{
+				"buffer_size": 6161,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "##################################################"
+			}
+		},
+		{
+			"file": "uart.h",
+			"settings":
+			{
+				"buffer_size": 339,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "main.c",
+			"settings":
+			{
+				"buffer_size": 1929,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "README.md",
+			"settings":
+			{
+				"buffer_size": 903,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "# Building"
+			}
+		},
+		{
+			"file": "clockgen_to_fix_fuses/main.c",
+			"settings":
+			{
+				"buffer_size": 169,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "pins.h",
+			"settings":
+			{
+				"buffer_size": 657,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "#ifndef _PINS_H"
+			}
+		},
+		{
+			"file": "shift.h",
+			"settings":
+			{
+				"buffer_size": 251,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "#ifndef _SHIFT_H"
+			}
+		},
+		{
+			"file": "shift.c",
+			"settings":
+			{
+				"buffer_size": 883,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "uart.c",
+			"settings":
+			{
+				"buffer_size": 971,
+				"encoding": "UTF-8",
+				"line_ending": "Unix",
+				"name": "#include <avr/io.h>"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/Makefile/Make.sublime-build",
+					""
+				],
+				[
+					"Packages/Makefile/Make.sublime-build",
+					"Clean"
+				]
+			],
+			[
+				"Packages/Makefile/Make.sublime-build",
+				""
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"sspla",
+				"Set Syntax: Plain Text"
+			],
+			[
+				"ss",
+				"Set Syntax: Markdown"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"sscma",
+				"Set Syntax: CMake"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"menu",
+				"View: Toggle Menu"
+			],
+			[
+				"ssrgb",
+				"Set Syntax: Assembly (RGBDS)"
+			],
+			[
+				"install",
+				"Package Control: Advanced Install Package"
+			],
+			[
+				"ssmake",
+				"Set Syntax: Makefile"
+			],
+			[
+				"men",
+				"View: Toggle Menu"
+			],
+			[
+				"json",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"ssc",
+				"Set Syntax: C++11"
+			],
+			[
+				"sssh",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"m",
+				"View: Toggle Menu"
+			],
+			[
+				"sslua",
+				"Set Syntax: Lua"
+			],
+			[
+				"ldoc",
+				"Build With: Moonscript - ldoc: Project"
+			],
+			[
+				"ssmoon",
+				"Set Syntax: MoonScript"
+			],
+			[
+				"ssmoo",
+				"Set Syntax: MoonScript"
+			],
+			[
+				"ssng",
+				"Set Syntax: nginx"
+			],
+			[
+				"ssmd",
+				"Set Syntax: Markdown"
+			],
+			[
+				"form",
+				"Pretty JSON: Format (Pretty Print) JSON"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"sswo",
+				"Set Syntax: WolframLanguage"
+			],
+			[
+				"packa",
+				"Package Control: Remove Package"
+			],
+			[
+				"floo",
+				"Floobits - Join Recent Workspace"
+			],
+			[
+				"floobits re",
+				"Floobits - Remove From Workspace"
+			],
+			[
+				"floo a",
+				"Floobits - Add To Workspace"
+			],
+			[
+				"floob",
+				"Floobits - Settings (~/.floorc.json)"
+			],
+			[
+				"upd",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: List Packages"
+			],
+			[
+				"dnds",
+				"Tmpl: DnD Spell"
+			],
+			[
+				"install ",
+				"Package Control: Install Package"
+			],
+			[
+				"inden",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"ssdot",
+				"Set Syntax: Graphviz (DOT)"
+			],
+			[
+				"graph",
+				"Preview Graphviz Snippet"
+			],
+			[
+				"ssbash",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"ssshe",
+				"Set Syntax: Shell Script (Bash)"
+			],
+			[
+				"sscis",
+				"Set Syntax: Cisco"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"inde",
+				"Indentation: Reindent Lines"
+			],
+			[
+				"gi",
+				"GitHub Flavored Markdown: Preview"
+			],
+			[
+				"Package Control: inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 479.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/kyra/electronics/gameboy_stuff/gbdumper/firmware",
+		"/home/kyra/electronics/gameboy_stuff/gbdumper/firmware/clockgen_to_fix_fuses"
+	],
+	"file_history":
+	[
+		"/tmp/Thapala  (YG, Morning of Day 10__5th of Descending Fire) - 2-6-2018.json",
+		"/home/kyra/Documents/walkthroughs/legend of queen opala/Legend of Opala - Golden Edition FAQ.txt",
+		"/home/kyra/Documents/CBD to THC-CBD-cocktail.md",
+		"/home/kyra/Documents/walkthroughs/legend of queen opala/L",
+		"/home/kyra/.PlayOnLinux/wineprefix/loqo/drive_c/Program Files/LoQO/LoQOIGolden/Game.ini",
+		"/home/kyra/.cache/.fr-2f9hmO/LoQOO/Legend of Queen Opala - Origin/Game.ini",
+		"/home/kyra/Games/Lilith's Throne/data/saves/Thapala.xml",
+		"/home/kyra/.PlayOnLinux/wineprefix/yanderesimulator/drive_c/users/kyra/AppData/LocalLow/YandereDev/Yandere Simulator Debug Build/Unity/local.299d3228431344145a4c01440fa51a85/Analytics/config",
+		"/home/kyra/electronics/gameboy_stuff/gbdumper/firmware/clockgen_to_fix_fuses/main.c",
+		"/home/kyra/electronics/gameboy_stuff/gbdumper/firmware/clockgen_to_fix_fuses/CMakeLists.txt",
+		"/home/kyra/electronics/gameboy_stuff/gbdumper/firmware/uart.h",
+		"/home/kyra/.arduino15/packages/MicroCore/hardware/avr/1.0.3/platform.txt",
+		"/home/kyra/electronics/gameboy_stuff/gbdumper/firmware/.sublime-project",
+		"/home/kyra/electronics/gameboy_stuff/gbdumper/firmware/generic-gcc-avr.cmake",
+		"/home/kyra/electronics/gameboy_stuff/gbdumper/firmware/Makefile",
+		"/home/kyra/dev/avr8bitdie/main.c",
+		"/home/kyra/dev/avr8bitdie/Makefile",
+		"/home/kyra/Games/Minecraft/MultiMC/instances/ahumans/patches/net.minecraft.json",
+		"/home/kyra/Games/Minecraft/MultiMC/instances/ahumans/minecraft/optionsof.txt",
+		"/home/kyra/Games/Minecraft/MultiMC/instances/ahumans/minecraft/config/Thaumcraft.cfg",
+		"/home/kyra/Downloads/Transmission/Done/Mirror's Edge Catalyst/cpy-mec.nfo",
+		"/home/kyra/Games/Minecraft/MultiMC/instances/ahumans/minecraft/config/forge.cfg",
+		"/home/kyra/Games/Minecraft/MultiMC/instances/ahumans/minecraft/config/ForbiddenMagic.cfg",
+		"/home/kyra/Games/Minecraft/MultiMC/instances/ahumans/minecraft/config/props.cfg",
+		"/home/kyra/Games/Minecraft/MultiMC/instances/ahumans/minecraft/betterfps.txt",
+		"/home/kyra/Games/Minecraft/MultiMC/instances/ahumans/minecraft/options.txt",
+		"/home/kyra/Games/Minecraft/MultiMC/instances/ahumans/minecraft/config/ThaumicHorizons.cfg",
+		"/home/kyra/Games/Minecraft/MultiMC/instances/ahumans/minecraft/config/ThaumicTinkerer.cfg",
+		"/home/kyra/Downloads/Telegram Desktop/phase1_lösung (4).php",
+		"/home/kyra/Downloads/Telegram Desktop/phase1_lösung (3).php",
+		"/home/kyra/Downloads/Telegram Desktop/phase1_lösung (2).php",
+		"/home/kyra/Downloads/Telegram Desktop/phase1_lösung.php",
+		"/tmp/hw.html",
+		"/home/kyra/.PlayOnLinux/wineprefix/hg2038/drive_c/Program Files/Flagship Studios/Hellgate London/Patcher.xml",
+		"/home/kyra/.PlayOnLinux/wineprefix/hg2038/drive_c/Program Files/Flagship Studios/Hellgate London/Language/English/Strings_Install.xls.uni",
+		"/home/kyra/Downloads/Transmission/Done/Saya no Uta/READ THIS OR THE GAME'S TEXT WILL LOOK SHITTY.txt",
+		"/home/kyra/dev/PlutoBoy/hook_hosts/mbc0.c",
+		"/home/kyra/dev/PlutoBoy/src/shared_libs/SDL2/framerate_SDL.c",
+		"/home/kyra/dev/PlutoBoy/src/non_core/framerate.h",
+		"/home/kyra/dev/PlutoBoy/src/core/mmu/memory.c",
+		"/tmp/highclr.s",
+		"/home/kyra/Games/Minecraft/MultiMC/instances/ahumans/minecraft/config/InvTweaksRules.txt",
+		"/home/kyra/Games/Minecraft/MultiMC/instances/ahumans/minecraft/config/InvTweaksTree.txt",
+		"/home/kyra/.cache/.fr-VRWkhs/pack.mcmeta",
+		"/home/kyra/.cache/.fr-bzjr52/legal.txt",
+		"/home/kyra/.PlayOnLinux/wineprefix/bgb/drive_c/Program Files/bgb/bgb.ini",
+		"/home/kyra/electronics/gameboy_stuff/gbdumper/gbdumper-custom.lib",
+		"/home/kyra/.cache/.fr-Nrgihv/bgb.ini",
+		"/home/kyra/dev/ncgb/src/mmu.rs",
+		"/home/kyra/dev/ncgb/Cargo.toml",
+		"/home/kyra/dev/ncgb/src/main.rs",
+		"/home/kyra/dev/ncgb/src/cpu/mod.rs",
+		"/home/kyra/dev/ncgb/src/cpu/instructions.rs",
+		"/home/kyra/dev/ncgb/src/cpu/instruction_map.rs",
+		"/home/kyra/Games/Minecraft/MultiMC/instances/ahumans/patches/net.minecraftforge.json",
+		"/home/kyra/Games/Minecraft/instance.cfg",
+		"/home/kyra/electronics/gameboy_stuff/gbcartbreakout/gerb/gbcartbreakout-F.SilkS.gbr.gto",
+		"/home/kyra/.config/chromium/Default/Preferences",
+		"/home/kyra/electronics/gameboy_stuff/gbcartbreakout/gbcartbreakout.kicad_pcb",
+		"/home/kyra/electronics/kicad-libs/3d/Buttons_Switches_SMD.3dshapes/SW_SPST_EVQQ2_01W.wrl",
+		"/home/kyra/Downloads/Telegram Desktop/kookies_mods.ckan",
+		"/home/kyra/.steam/steam/steamapps/common/Kerbal Space Program/GameData/DarkMultiPlayer/Plugins/Data/privatekey.txt",
+		"/home/kyra/void-packages/masterdir/builddir/ettercap-0.8.2/build/CMakeFiles/CMakeOutput.log",
+		"/home/kyra/dev/cuddlyrobot/eris/LICENSE.md",
+		"/home/kyra/.cache/.fr-h78rAJ/INSTALL.txt",
+		"/syncthing/Pack/scripts/um windofs scheisse zu fixen/chrome audio/setvolume.py",
+		"/syncthing/Pack/scripts/um windofs scheisse zu fixen/chrome audio/setvolume.bat",
+		"/syncthing/Games/FalloutNV/Sexout/faq.txt",
+		"/syncthing/Pack/scripts/rename_casediffering_stuff.sh",
+		"/home/kyra/.cache/.fr-PxCKtI/Julia Chang set read me.txt",
+		"/home/kyra/.PlayOnLinux/wineprefix/FalloutNV/drive_c/Program Files/Mr DJ/Fallout New Vegas Ultimate Edition/nvse_loader.log",
+		"/home/kyra/.PlayOnLinux/wineprefix/FalloutNV/drive_c/Program Files/Mr DJ/Fallout New Vegas Ultimate Edition/nvse_steam_loader.log",
+		"/home/kyra/.PlayOnLinux/wineprefix/FalloutNV/drive_c/Program Files/Mr DJ/Fallout New Vegas Ultimate Edition/nvse_extender.log",
+		"/home/kyra/.PlayOnLinux/wineprefix/FalloutNV/drive_c/Program Files/Mr DJ/Fallout New Vegas Ultimate Edition/nvse_extender_ng.log",
+		"/home/kyra/.PlayOnLinux/wineprefix/FalloutNV/drive_c/Program Files/Mr DJ/Fallout New Vegas Ultimate Edition/mcm.log",
+		"/home/kyra/.PlayOnLinux/wineprefix/FalloutNV/drive_c/Program Files/Mr DJ/Fallout New Vegas Ultimate Edition/Data/nvse/plugins/Extender/Saves/Save 10   Thapala  Mojave Wasteland  03 12 04.fos.csv",
+		"/home/kyra/.config/massren/temp/25b94486-d94d-4f7f-5e0f-b8d4d2702314.files.txt",
+		"/syncthing/Games/FalloutNV/FNVPatch13/source/FalloutNVpatch.cpp",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/.gitignore",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/.sublime-project",
+		"/tmp/packages",
+		"/home/kyra/dev/cuddlyrobot/cuddlyplayer/queue_player.lua",
+		"/home/kyra/Downloads/Telegram Desktop/folder_listing.txt",
+		"/home/kyra/dev/cuddlyrobot/cuddlyplayer/mainwin.ui",
+		"/home/kyra/dev/cuddlyrobot/cuddlyplayer/init.lua",
+		"/home/kyra/dev/cuddlyrobot/cuddlyplayer/init.moon",
+		"/home/kyra/dev/cuddlyrobot/cuddlyplayer/queue.lua",
+		"/home/kyra/dev/cuddlyrobot/cuddlyplayer/.gitignore",
+		"/home/kyra/dev/cuddlyrobot/cuddlyplayer/setup.zsh",
+		"/home/kyra/dev/cuddlyrobot/cuddlyplayer/.run",
+		"/syncthing/Pack/.stfolder",
+		"/run/user/1000/gvfs/sftp:host=10.0.0.5,user=root/volumes/4tb2/syncthing/Games/FalloutNV/SexoutNG/faq~20170809-153421.txt",
+		"/syncthing/Pack/Games/FalloutNV/SexoutNG/downloads.txt",
+		"/syncthing/Pack/Games/FalloutNV/SexoutNG/faq.txt",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/modules/dysnomia/renderers/html5_dsl.lua",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/ngx_config/events.conf",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/test/test.lua",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/test/init.lua",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/test/nginx.conf",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/ngx_config/http/server.conf",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/ngx_config/http.conf",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/ngx_config/preprocessor.conf",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/ngx_config/main.conf",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/tools/config_to_defines.moon",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/README.md",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/modules/dysnomia/config/init.moon",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/modules/dysnomia/renderers/html5_dsl.moon",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/test/config.moon",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/lunadoc.cfg",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/modules/dysnomia/routers/interface.moon",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/test/doc.md",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/test/doc_gen.moon",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/modules/dysnomia/config/defaults.lua",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/modules/dysnomia/routers/regex_router.lua",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/modules/dysnomia/routers/regex_router.moon",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/modules/dysnomia/config/defaults.moon",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/modules/dysnomia/utils/expnil.moon",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/modules/dysnomia/utils/dsl.moon",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/config.ld",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/doc.elua",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/LICENSE.md",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/test/doc_gen.lua",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/test/doc.txt.moon",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/modules/dysnomia/config/doc.md",
+		"/home/kyra/.config/sublime-text-3/Packages/Moonscripty/LuaDoc.sublime-completions",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/test/test.moon",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/setup.zsh",
+		"/home/kyra/dev/cuddlyrobot/dysnomia/.root/share/lua/5.1/ldoc/doc.lua"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"        ;",
+			"false",
+			"fuse",
+			"         "
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 2,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "CMakeLists.txt",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6161,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								6159,
+								6159
+							]
+						],
+						"settings":
+						{
+							"auto_name": "##################################################",
+							"syntax": "Packages/CMakeEditor/CMakeEditor.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 2152.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "uart.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 339,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "main.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1929,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								529,
+								529
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 102.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 903,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								212,
+								212
+							]
+						],
+						"settings":
+						{
+							"auto_name": "# Building",
+							"color_scheme": "Packages/MarkdownEditing/MarkdownEditor.tmTheme",
+							"syntax": "Packages/MarkdownEditing/Markdown.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "clockgen_to_fix_fuses/main.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 169,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "pins.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 657,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								282,
+								182
+							]
+						],
+						"settings":
+						{
+							"auto_name": "#ifndef _PINS_H",
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "shift.h",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 251,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								71,
+								71
+							]
+						],
+						"settings":
+						{
+							"auto_name": "#ifndef _SHIFT_H",
+							"syntax": "Packages/C++/C++.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "shift.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 883,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								327,
+								327
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "uart.c",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 971,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								971,
+								971
+							]
+						],
+						"settings":
+						{
+							"auto_name": "#include <avr/io.h>",
+							"syntax": "Packages/C++/C.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 255.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 37.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output./home/kyra/dev/PlutoBoy/hook_hosts/menu/gbhw.inc":
+	{
+		"height": 0.0
+	},
+	"output./home/kyra/dev/PlutoBoy/hook_hosts/menu/ibmpc1.inc":
+	{
+		"height": 0.0
+	},
+	"output./home/kyra/dev/PlutoBoy/hook_hosts/menu/memory.asm":
+	{
+		"height": 0.0
+	},
+	"output./home/kyra/dev/PlutoBoy/hook_hosts/menu/memory.inc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 194.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "cmake",
+	"project": ".sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 289.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

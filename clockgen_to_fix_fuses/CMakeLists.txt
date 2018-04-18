@@ -26,13 +26,13 @@ set(AVR_UPLOADTOOL_PORT /dev/ttyUSB0)
 ##########################################################################
 # AVR and fuses needs to be set
 ##########################################################################
-set(AVR_MCU atmega32)
-set(AVR_H_FUSE 0xd9)
-set(AVR_L_FUSE 0x3f)
+set(AVR_MCU attiny13)
+set(AVR_H_FUSE 0xff)
+set(AVR_L_FUSE 0x6a)
 
 ### END TOOLCHAIN SETUP AREA #############################################
 
-include(generic-gcc-avr.cmake)
+include(../generic-gcc-avr.cmake)
 
 ##########################################################################
 # name your project
@@ -60,7 +60,7 @@ endif(NOT CMAKE_BUILD_TYPE)
 ##########################################################################
 # needs to be defined for AVR toolchain
 ##########################################################################
-set(MCU_SPEED "16000000UL")
+set(MCU_SPEED "9600000UL")
 
 ##########################################################################
 # some cmake cross-compile necessities
@@ -98,13 +98,13 @@ message(STATUS "Set CMAKE_SYSTEM_LIBRARY_PATH to ${CMAKE_SYSTEM_LIBRARY_PATH}")
 # set compiler options for build types
 ##########################################################################
 if(CMAKE_BUILD_TYPE MATCHES Release)
-   set(CMAKE_C_FLAGS_RELEASE "-Os -mcall-prologues")
-   set(CMAKE_CXX_FLAGS_RELEASE "-Os -mcall-prologues")
+   set(CMAKE_C_FLAGS_RELEASE "-Os")
+   set(CMAKE_CXX_FLAGS_RELEASE "-Os")
 endif(CMAKE_BUILD_TYPE MATCHES Release)
 
 if(CMAKE_BUILD_TYPE MATCHES RelWithDebInfo)
-   set(CMAKE_C_FLAGS_RELWITHDEBINFO "-Os -mcall-prologues -save-temps -g -gdwarf-3 -gstrict-dwarf")
-   set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-Os -mcall-prologues -save-temps -g -gdwarf-3 -gstrict-dwarf")
+   set(CMAKE_C_FLAGS_RELWITHDEBINFO "-Os -save-temps -g -gdwarf-3 -gstrict-dwarf")
+   set(CMAKE_CXX_FLAGS_RELWITHDEBINFO "-Os -save-temps -g -gdwarf-3 -gstrict-dwarf")
 endif(CMAKE_BUILD_TYPE MATCHES RelWithDebInfo)
 
 if(CMAKE_BUILD_TYPE MATCHES Debug)
@@ -129,18 +129,11 @@ add_definitions("-c")
 add_definitions("-std=gnu99")
 
 add_avr_executable(
-  firmware
+  clockfuse_fixer
   main.c
-  uart.c
-  shift.c
 )
 
 find_library(C_LIB c)
-find_library(PRINTF_FLT_LIB printf_flt)
-find_library(M_LIB m)
-
 message(STATUS "avr-libc: ${C_LIB}")
-message(STATUS "avr-printf_flt: ${PRINTF_FLT_LIB}")
-message(STATUS "avr-libm: ${M_LIB}")
 
-avr_target_link_libraries(firmware ${C_LIB} "-Wl,-u,vfprintf" ${PRINTF_FLT_LIB} ${M_LIB} "-L /usr/lib/gcc/avr/7.3.0/")
+avr_target_link_libraries(clockfuse_fixer ${C_LIB})

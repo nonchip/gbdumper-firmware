@@ -1,20 +1,30 @@
-#include <avr/io.h>
-#include <util/delay.h>
+#ifdef EMULATOR
+  #include "emulator/emulator.h"
+#else
+  #include <avr/io.h>
+  #include <util/delay.h>
+  #include <avr/sleep.h>
+  #include <avr/interrupt.h>
+  #include "uart.h"
+  #include "pins.h"
+  #include "shift.h"
+  #define set_port_cmd(v) PORT_CMD = v
+  #define set_port_data(v) PORT_DATA = v
+#endif
 #include <stdlib.h>
-#include <avr/sleep.h>
-#include <avr/interrupt.h>
 #include <stdio.h>
 
-#include "uart.h"
-#include "pins.h"
-#include "shift.h"
-
+#ifdef EMULATOR
+int main (int argc,char* argv[]) {
+  emulator_init(argc,argv);
+#else
 int main (void) {
-  char cmd;
   uart_init(true); // setup uart and bind to stdio
   shift_init();
   DDR_CMD |= _BV(CMD__RD) | _BV(CMD__CS) | _BV(CMD__WR) | _BV(CMD__RST) | _BV(CMD_CLK);
   PORT_CMD = _BV(CMD__RD) | _BV(CMD__CS) | _BV(CMD__WR) | _BV(CMD__RST);
+#endif
+  char cmd;
   while(true){
     cmd=getchar();
     if (cmd=='\r' || cmd=='\n')
@@ -25,7 +35,7 @@ int main (void) {
       continue;
     }
     switch(cmd){
-      case 'C':
+      case 'C': // command pins
         /* dummy statement for label */;
         int v=_BV(CMD__RD) | _BV(CMD__CS) | _BV(CMD__WR) | _BV(CMD__RST);
         bool reading=true;
@@ -33,41 +43,45 @@ int main (void) {
         while(reading){
           c=getchar();
           switch(c){
-            case 'w':
+            case 'w': // ~WE
               v &= ~ _BV(CMD__WR);
-            case 'r':
+            case 'r': // ~RE
               v &= ~ _BV(CMD__RD);
-            case 'c':
+            case 'c': // ~CS
               v &= ~ _BV(CMD__CS);
-            case 'R':
+            case 'R': // ~RST
               v &= ~ _BV(CMD__RST);
-            case 'C':
+            case 'C': // CLK
               v |= _BV(CMD_CLK);
             default:
               reading=false;
               break;
           }
         }
-        PORT_CMD = v;
+        set_port_cmd(v);
         break;
-      case 'A':
+      case 'A': // set addr
         /* dummy statement for label */;
         uint16_t a;
         scanf("%x",&a);
         shift_set_addr(a);
         break;
-      case 'R':
+      case 'R': // read byte
         /* dummy statement for label */;
-        DDR_DATA = 0;
+        #ifndef EMULATOR
+          DDR_DATA = 0;
+        #endif
         uint8_t dr = PIN_DATA;
         printf("%x\r\n",dr);
         break;
-      case 'W':
+      case 'W': // write byte
         /* dummy statement for label */;
-        DDR_DATA = _BV(DATA_0) | _BV(DATA_1) | _BV(DATA_2) | _BV(DATA_3) | _BV(DATA_4) | _BV(DATA_5) | _BV(DATA_6) | _BV(DATA_7);
+        #ifdef EMULATOR
+          DDR_DATA = _BV(DATA_0) | _BV(DATA_1) | _BV(DATA_2) | _BV(DATA_3) | _BV(DATA_4) | _BV(DATA_5) | _BV(DATA_6) | _BV(DATA_7);
+        #endif
         uint8_t dw;
         scanf("%hhx",&dw);
-        PORT_DATA=dw;
+        set_port_data(dw);
         break;
       default:
         printf("ERR\r\n");
