@@ -62,6 +62,7 @@ int emulator_init(int argc,char* argv[]){
       abort();
     }
     size_t r=fread(emulator_data->ram, 1, 0xffff, fp);
+    fclose(fp);
     fprintf(stderr,"Read %#06x bytes from '%s' to ram.\n",r,loadfile);
   }
   fprintf(stderr,"emulator_init done.\n");
