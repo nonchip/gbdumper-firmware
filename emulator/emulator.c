@@ -153,5 +153,10 @@ void emulator_think(){
     fprintf(stderr, "MAGIC SMOKE: addr changed while ~WR low.\n");
     abort();
   }
+  //die if addr is changed while !CS low
+  if(emulator_data->addr != emulator_data->latchaddr && low(CMD__CS) ){
+    fprintf(stderr, "MAGIC SMOKE: addr changed while ~CS low.\n");
+    abort();
+  }
 
 }
