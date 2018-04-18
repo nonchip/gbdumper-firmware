@@ -143,5 +143,10 @@ void emulator_think(){
     fprintf(stderr, "MAGIC SMOKE: ~WR and ~RD low at the same time.\n");
     abort();
   }
+  //die if addr is changed while !RD or !RW low
+  if(emulator_data->addr != emulator_data->latchaddr && ( low(CMD__RD) || low(CMD__WR) ) ){
+    fprintf(stderr, "MAGIC SMOKE: addr changed while ~WR or ~RD low.\n");
+    abort();
+  }
 
 }
