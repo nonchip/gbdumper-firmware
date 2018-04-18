@@ -1,12 +1,16 @@
 #ifdef EMULATOR
+  #define _BV(bit) \
+    (1 << (bit)) 
   #include "emulator/emulator.h"
+  #include "emulator/emupins.h"
+  #include <stdbool.h>
 #else
   #include <avr/io.h>
   #include <util/delay.h>
   #include <avr/sleep.h>
   #include <avr/interrupt.h>
-  #include "uart.h"
   #include "pins.h"
+  #include "uart.h"
   #include "shift.h"
   #define set_port_cmd(v) PORT_CMD = v
   #define set_port_data(v) PORT_DATA = v
@@ -76,7 +80,7 @@ int main (void) {
         break;
       case 'W': // write byte
         /* dummy statement for label */;
-        #ifdef EMULATOR
+        #ifndef EMULATOR
           DDR_DATA = _BV(DATA_0) | _BV(DATA_1) | _BV(DATA_2) | _BV(DATA_3) | _BV(DATA_4) | _BV(DATA_5) | _BV(DATA_6) | _BV(DATA_7);
         #endif
         uint8_t dw;
