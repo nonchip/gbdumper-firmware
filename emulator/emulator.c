@@ -115,7 +115,12 @@ bool high(uint8_t pin){
 void emulator_think(){
   if( emulator_data->prevcmd == emulator_data->cmd ) // no cmd changes
     return;
-  if( ( emulator_data->cmd & _BV(CMD__CS) ) != 0 ) // ~CS high, bus disabled
+
+  //clear data bus on /CS
+  if(edge_rising(CMD__CS))
+    emulator_data->data = 0;
+
+  if(high(CMD__CS)) // ~CS high, bus disabled
     return;
 
   //latch addr on \CLK
