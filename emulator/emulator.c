@@ -126,8 +126,8 @@ void emulator_think(){
   if(low(CMD__WR) && high(CMD__RD))
     emulator_data->ram[emulator_data->latchaddr] = emulator_data->data;
 
-  //read continuously while !WR high and !RD low:
-  if(high(CMD__WR) && low(CMD__RD))
+  //read on \CLK while !WR high and !RD low:
+  if(high(CMD__WR) && low(CMD__RD) && edge_falling(CMD_CLK))
     emulator_data->data = emulator_data->ram[emulator_data->latchaddr];
 
   //die if !WR and !RD low:
