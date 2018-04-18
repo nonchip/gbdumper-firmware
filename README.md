@@ -30,3 +30,21 @@ you might have to edit the `CMakeLists.txt` file to accomodate for your programm
   * to `R` command: the hex value
   * to malformed commands: `ERR`
   * everything else works silently but blocks the input while working
+
+# Emulator
+there's an emulator feature that replaces the usb serial connection with `stdio` and the cartridge by an emulated bus (connected to a `0xffff` bytes ram buffer) while linking to the actual protocol part of the firmware.
+
+you can find it in the `emulator` directory.
+
+## Building
+
+    mkdir emulator/build
+    cd emulator/build
+    cmake ..
+    make
+
+## Usage
+
+* `./emulator [-r] [-l path]`
+  * `-r` randomizes the bus state on startup (to simulate a random electronic state in the chips on power-on)
+  * `-l path` loads up to `0xffff` bytes from `path` into the internal buffer.
