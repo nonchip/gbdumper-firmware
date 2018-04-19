@@ -34,4 +34,5 @@ void plain_ram_init(char* loadfile, bool randomize){
   }
   emulator_read=&plain_ram_read;
   emulator_write=&plain_ram_write;
+  fprintf(stderr, "plain_ram chipset loaded.\n");
 }

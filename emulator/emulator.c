@@ -66,6 +66,11 @@ int emulator_init(int argc,char* argv[]){
   if(!strcmp(chipset,"plain_ram"))
     plain_ram_init(loadfile,randomize);
 
+
+  if(NULL==emulator_read || NULL==emulator_write){
+    fprintf(stderr,"chipset not loaded!\n");
+    abort();
+  }
   emulator_data->latchaddr=emulator_data->addr;
   emulator_data->prevcmd=emulator_data->cmd;
   fprintf(stderr,"emulator_init done.\n");
