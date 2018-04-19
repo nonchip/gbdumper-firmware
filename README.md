@@ -47,7 +47,7 @@ you can find it in the `emulator` directory.
 
 * `./emulator [-c chipset] [-r] [-l path]`
   * `-r` randomizes the bus state on startup (to simulate a random electronic state in the chips on power-on)
-  * `-c chipset` specifies the chipset (defaulting to `plain_ram`):"
+  * `-c chipset` specifies the chipset (defaulting to `plain_ram`):
     * `plain_ram` is a `0xffff` bytes ram buffer and supports the following operations:
       * `-r` also randomizes the buffer contents
       * `-l path` loads up to `0xffff` bytes from `path` into the internal buffer.
