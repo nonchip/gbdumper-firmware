@@ -48,3 +48,24 @@ you can find it in the `emulator` directory.
 * `./emulator [-r] [-l path]`
   * `-r` randomizes the bus state on startup (to simulate a random electronic state in the chips on power-on)
   * `-l path` loads up to `0xffff` bytes from `path` into the internal buffer.
+
+# reference client implementations
+
+there's a few reference implementations in `ref_impl`.
+
+## `show_header`
+
+this client reads the cartridge header and displays the contained information in a human-friendly format (including decoding known constants nintendo used).
+
+### Building
+    mkdir ref_impl/show_header/build
+    cd ref_impl/show_header/build
+    cmake ..
+    make
+
+### Usage
+* `./show_header path`
+  * `path` is the path to a character device which will be used to communicate with the hardware/emulator.
+    * if you want to use it with the hardware, use `/dev/ttyUSB*` (NOTE: untested for now).
+    * if you want to use it with the emulator, create a device with a command like:
+  `socat -d -d pty,raw,echo=0 "exec:/path/to/emulator -rl /path/to/rom,pty,raw,echo=0"`

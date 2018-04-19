@@ -26,14 +26,15 @@ int main (void) {
   uart_init(true); // setup uart and bind to stdio
   shift_init();
   DDR_CMD |= _BV(CMD__RD) | _BV(CMD__CS) | _BV(CMD__WR) | _BV(CMD__RST) | _BV(CMD_CLK);
-  PORT_CMD = _BV(CMD__RD) | _BV(CMD__CS) | _BV(CMD__WR) | _BV(CMD__RST);
 #endif
+  set_port_cmd(_BV(CMD__RD) | _BV(CMD__CS) | _BV(CMD__WR) | _BV(CMD__RST));
   char cmd;
   while(true){
     cmd=getchar();
-    if (cmd=='\r' || cmd=='\n')
+    if (cmd=='\r' || cmd=='\n' || cmd==EOF || cmd==0)
       continue;
-    if (getchar()!=' ')
+    //fprintf(stderr,"[%c %#04x]",cmd,cmd);
+    if (cmd!='R' && getchar()!=' ')
     {
       printf("ERR\r\n");
       continue;
@@ -46,17 +47,25 @@ int main (void) {
         char c;
         while(reading){
           c=getchar();
+          //fprintf(stderr,"(%c %c %#04x)",cmd,c,c);
           switch(c){
             case 'w': // ~WE
               v &= ~ _BV(CMD__WR);
+              break;
             case 'r': // ~RE
               v &= ~ _BV(CMD__RD);
+              break;
             case 'c': // ~CS
               v &= ~ _BV(CMD__CS);
+              break;
             case 'R': // ~RST
               v &= ~ _BV(CMD__RST);
+              break;
             case 'C': // CLK
               v |= _BV(CMD_CLK);
+              break;
+            case '\r':
+            case '\n':
             default:
               reading=false;
               break;
@@ -76,7 +85,7 @@ int main (void) {
           DDR_DATA = 0;
         #endif
         uint8_t dr = PIN_DATA;
-        printf("%x\r\n",dr);
+        printf("%02x\r\n",dr);
         break;
       case 'W': // write byte
         /* dummy statement for label */;
