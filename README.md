@@ -69,6 +69,6 @@ this client reads the cartridge header and displays the contained information in
     * if you want to use it with the hardware, use `/dev/ttyUSB*` (NOTE: untested for now).
     * if you want to use it with the emulator, create a virtual device wrapping it with a command like:
 
-      `socat -ddd -ddd pty,raw,echo=0,crnl "exec:'./emulator -rl /path/to/rom.gb',pty,raw,echo=0,crnl"`
+      `socat -ddd -ddd pty,raw,echo=0,crnl "exec:'./emulator -rl rom.gb',pty,raw,echo=0,crnl"`
 
       it will then show you a `/dev/pty/*` device to connect to.
