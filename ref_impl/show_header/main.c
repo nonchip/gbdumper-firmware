@@ -183,7 +183,7 @@ int main(int argc, char* argv[]){
     if(0!=ram8Kbanks[header->ramsize[0]])
       printf(" in %d 8K banks\n",ram8Kbanks[header->ramsize[0]]);
     else
-      printf("without banking\n");
+      printf(" without banking\n");
   }else
     printf("unknown\n");
 
