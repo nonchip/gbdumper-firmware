@@ -1,6 +1,7 @@
 #ifndef _EMULATOR_H
 #define _EMULATOR_H
 #include <stdint.h>
+#include <stdbool.h>
 
 // accessors
 int emulator_init(int argc,char* argv[]);
@@ -15,5 +16,8 @@ void shift_set_addr(uint16_t a);
 
 uint8_t (*emulator_read)(uint16_t);
 void (*emulator_write)(uint16_t,uint8_t);
+
+void plain_ram_init(char* loadfile,bool randomize);
+
 
 #endif

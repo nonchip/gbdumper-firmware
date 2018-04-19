@@ -1,4 +1,4 @@
-#include "plain_ram.h"
+#include "emulator.h"
 #include <stdbool.h>
 #include <stdlib.h>
 #include <ctype.h>
@@ -9,6 +9,13 @@
 #include <string.h>
 
 uint8_t plain_ram[0x10000];
+
+uint8_t plain_ram_read(uint16_t addr){
+  return plain_ram[addr];
+}
+void plain_ram_write(uint16_t addr,uint8_t value){
+  plain_ram[addr]=value;
+}
 
 void plain_ram_init(char* loadfile, bool randomize){
   if(randomize)
@@ -27,11 +34,4 @@ void plain_ram_init(char* loadfile, bool randomize){
   }
   emulator_read=&plain_ram_read;
   emulator_write=&plain_ram_write;
-}
-
-uint8_t plain_ram_read(uint16_t addr){
-  return plain_ram[addr];
-}
-void plain_ram_write(uint16_t addr,uint8_t value){
-  plain_ram[addr]=value;
 }

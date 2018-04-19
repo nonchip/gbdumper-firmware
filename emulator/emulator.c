@@ -9,8 +9,6 @@
 #include "emulator.h"
 #include "emupins.h"
 
-#include "plain_ram.h"
-
 #define _BV(bit) \
   (1 << (bit)) 
 
