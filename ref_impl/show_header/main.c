@@ -24,7 +24,7 @@ void writes(int fd,char* str){
       perror("Failed to write");
       abort();
     }
-    usleep (l*100);
+    usleep (l*500);
     str+=s;
   }
 }
