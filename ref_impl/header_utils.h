@@ -13,7 +13,7 @@
 struct header_t{
   HEADER_FIELD(entrypoint, 0x0100, 0x0103);
   HEADER_FIELD(logo,       0x0104, 0x0133);
-  HEADER_FIELD(title,      0x0134, 0x0143);
+  HEADER_FIELD(title,      0x0134, 0x013e); // goes to 143 on old games, but then we'd have alignment issues, todo: check if `union` helps
   HEADER_FIELD(mancode,    0x013f, 0x0142);
   HEADER_FIELD(cgbflag,    0x0143, 0x0143);
   HEADER_FIELD(newlicense, 0x0144, 0x0145);

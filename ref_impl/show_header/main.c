@@ -144,7 +144,7 @@ int main(int argc, char* argv[]){
 
   printf("Title: %s\n", header->title);
 
-  printhca("Manufacturer code:",header->mancode,4);
+  printha("Manufacturer code:",header->mancode,4);
 
   printf("CGB: %02x ",header->cgbflag[0]);
   if((header->cgbflag[0] & _BV(7))!=0){
