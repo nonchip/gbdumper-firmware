@@ -11,4 +11,9 @@ void shift_set_addr(uint16_t a);
 
 // there exists a private struct emulator_data_t that's used by those, but it's not exposed here on purpose.
 
+// chipset implementations:
+
+uint8_t (*emulator_read)(uint16_t);
+void (*emulator_write)(uint16_t,uint8_t);
+
 #endif

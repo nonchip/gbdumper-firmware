@@ -4,4 +4,5 @@ add_executable(
   emulator
   ../main.c
   emulator.c
+  plain_ram.c
 )

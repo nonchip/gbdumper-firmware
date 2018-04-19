@@ -32,7 +32,7 @@ you might have to edit the `CMakeLists.txt` file to accomodate for your programm
   * everything else works silently but blocks the input while working
 
 # Emulator
-there's an emulator feature that replaces the usb serial connection with `stdio` and the cartridge by an emulated bus (connected to a `0xffff` bytes ram buffer) while linking to the actual protocol part of the firmware.
+there's an emulator feature that replaces the usb serial connection with `stdio` and the cartridge by an emulated bus while linking to the actual protocol part of the firmware.
 
 you can find it in the `emulator` directory.
 
@@ -45,9 +45,12 @@ you can find it in the `emulator` directory.
 
 ## Usage
 
-* `./emulator [-r] [-l path]`
+* `./emulator [-c chipset] [-r] [-l path]`
   * `-r` randomizes the bus state on startup (to simulate a random electronic state in the chips on power-on)
-  * `-l path` loads up to `0xffff` bytes from `path` into the internal buffer.
+  * `-c chipset` specifies the chipset (defaulting to `plain_ram`):"
+    * `plain_ram` is a `0xffff` bytes ram buffer and supports the following operations:
+      * `-r` also randomizes the buffer contents
+      * `-l path` loads up to `0xffff` bytes from `path` into the internal buffer.
 
 # reference client implementations
 

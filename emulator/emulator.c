@@ -8,6 +8,9 @@
 #include <string.h>
 #include "emulator.h"
 #include "emupins.h"
+
+#include "plain_ram.h"
+
 #define _BV(bit) \
   (1 << (bit)) 
 
@@ -23,7 +26,6 @@ struct emulator_data_t{
   uint8_t prevcmd;     // previous bus state (to detect edges)
   //uint8_t latchdata;   // internal state
   uint16_t latchaddr;  // internal state
-  uint8_t ram[0xffff]; // internal state
 };
 
 struct emulator_data_t* emulator_data;
@@ -33,19 +35,25 @@ int emulator_init(int argc,char* argv[]){
   char* loadfile=NULL;
   opterr = 0;
   char c;
-  while((c = getopt (argc, argv, "rl:")) != -1)
+  char* chipset="plain_ram";
+  bool randomize=false;
+  while((c = getopt (argc, argv, "rl:c:")) != -1)
     switch(c)
       {
       case 'r': // initialize everything with random values
         srand(time(NULL));
+        randomize=true;
         for (int i = 0; i < sizeof(struct emulator_data_t); ++i)
           ((uint8_t*)emulator_data)[i]=(uint8_t)rand();
         break;
-      case 'l': // load ram from file
+      case 'l': // load from file
         loadfile = optarg;
         break;
+      case 'c':
+        chipset = optarg;
+        break;
       case '?':
-        if(optopt == 'l')
+        if(optopt == 'l' || optopt == 'c')
           fprintf(stderr, "Option -%c requires an argument.\n", optopt);
         else if(isprint (optopt))
           fprintf(stderr, "Unknown option `-%c'.\n", optopt);
@@ -56,17 +64,10 @@ int emulator_init(int argc,char* argv[]){
       default:
         abort();
       }
-  if(loadfile){
-    FILE* fp = fopen(loadfile,"r");
-    if(!fp){
-      fprintf(stderr, "Error opening '%s': %s\n",loadfile,strerror(errno));
-      fflush(stderr);
-      abort();
-    }
-    size_t r=fread(emulator_data->ram, 1, 0xffff, fp);
-    fclose(fp);
-    fprintf(stderr,"Read %#06x bytes from '%s' to ram.\n",r,loadfile);
-  }
+  
+  if(!strcmp(chipset,"plain_ram"))
+    plain_ram_init(loadfile,randomize);
+
   emulator_data->latchaddr=emulator_data->addr;
   emulator_data->prevcmd=emulator_data->cmd;
   fprintf(stderr,"emulator_init done.\n");
@@ -147,11 +148,11 @@ void emulator_think(){
 
   //write continuously while !WR low and !RD high:
   if(low(CMD__WR) && high(CMD__RD))
-    emulator_data->ram[emulator_data->latchaddr] = emulator_data->data;
+    (*emulator_write)(emulator_data->latchaddr,emulator_data->data);
 
   //read on \CLK while !WR high and !RD low:
   if(high(CMD__WR) && low(CMD__RD) && edge_falling(CMD_CLK))
-    emulator_data->data = emulator_data->ram[emulator_data->latchaddr];
+    emulator_data->data = (*emulator_read)(emulator_data->latchaddr);
 
   //die if !WR and !RD low:
   if(low(CMD__RD) && edge_falling(CMD__WR) && !edge_falling(CMD__RD)){
