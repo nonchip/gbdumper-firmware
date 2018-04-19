@@ -7,7 +7,7 @@ const uint8_t nintendo_logo[]={
   0xBB,0xBB,0x67,0x63,0x6E,0x0E,0xEC,0xCC,0xDD,0xDC,0x99,0x9F,0xBB,0xB9,0x33,0x3E
 };
 
-const static char* newlicensees[]={
+const char* newlicensees[]={
   [0x00] = "(none)",
   [0x01] = "Nintendo R&D1",
   [0x08] = "Capcom",
@@ -71,7 +71,7 @@ const static char* newlicensees[]={
   [0xA4] = "Konami (Yu-Gi-Oh!)"
 };
 
-const static char* carttypes[] = {
+const char* carttypes[] = {
   [0x00] = "ROM ONLY",
   [0x01] = "MBC1",
   [0x02] = "MBC1+RAM",
@@ -102,7 +102,7 @@ const static char* carttypes[] = {
   [0xFF] = "HuC1+RAM+BATTERY"
 };
 
-const static int rombanks[]={
+const int rombanks[]={
   [0x00] =   0,
   [0x01] =   4,
   [0x02] =   8,
@@ -117,8 +117,8 @@ const static int rombanks[]={
   [0x54] =  96
 };
 
-const static int ramKs[]      = {0, 2, 8, 32, 128, 64};
-const static int ram8Kbanks[] = {0, 0, 0,  4,  16,  8};
+const int ramKs[]      = {0, 2, 8, 32, 128, 64};
+const int ram8Kbanks[] = {0, 0, 0,  4,  16,  8};
 
 
 uint8_t calc_hchk(struct header_t* h){

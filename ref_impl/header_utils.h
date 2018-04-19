@@ -8,7 +8,7 @@
 #define HEADER_SIZE ( sizeof(struct header_t) )
 #define HEADER_END ( HEADER_START + HEADER_SIZE )
 
-#define HEADER_FIELD(n,s,e) uint8_t n[e - s + 1]
+#define HEADER_FIELD(n,s,e) uint8_t n[(e - s) + 1]
 
 struct header_t{
   HEADER_FIELD(entrypoint, 0x0100, 0x0103);
@@ -30,19 +30,19 @@ struct header_t{
 
 const uint8_t nintendo_logo[48];
 
-const static char* newlicensees[0xff];
+const char* newlicensees[0xff];
 
 #define CGB_ENABLED 0x80
 #define CGB_REQUIRED 0xc0
 
 #define SDB_ENABLED 0x03
 
-const static char* carttypes[0x100];
+const char* carttypes[0x100];
 
-const static int rombanks[0xff];
+const int rombanks[0xff];
 
-const static int ramKs[0xff];
-const static int ram8Kbanks[0xff];
+const int ramKs[0xff];
+const int ram8Kbanks[0xff];
 
 #define DEST_JP 0
 #define DEST_NJP 1

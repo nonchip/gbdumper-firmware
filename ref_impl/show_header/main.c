@@ -15,6 +15,9 @@
 
 #include "../header_utils.h"
 
+#define _BV(bit) \
+  (1 << (bit)) 
+
 void writes(int fd,char* str){
   ssize_t l;
   while((l=strlen(str))>0){
@@ -74,6 +77,37 @@ uint8_t read_from_addr(int fd, uint16_t addr){
   return ri;
 }
 
+void printha(char* pre, uint8_t* a, ssize_t len){
+  printf("%s",pre);
+  for (int i = 0; i < len; ++i)
+  {
+    printf(" %02x",a[i]);
+  }
+  printf("\n");
+}
+
+void printhca(char* pre, uint8_t* a, ssize_t len){
+  printf("%s",pre);
+  for (int i = 0; i < len; ++i)
+  {
+    printf(" %02x",a[i]);
+  }
+  for (int i = 0; i < len; ++i)
+  {
+    printf("%c",a[i]);
+  }
+  printf("\n");
+}
+
+void printca(char* pre, uint8_t* a, ssize_t len){
+  printf("%s",pre);
+  for (int i = 0; i < len; ++i)
+  {
+    printf("%c",a[i]);
+  }
+  printf("\n");
+}
+
 int main(int argc, char* argv[]){
   if(argc<1){
     fprintf(stderr,"require TTY as first argument.\n");
@@ -100,7 +134,76 @@ int main(int argc, char* argv[]){
     ((uint8_t*)header)[i] = read_from_addr(fd,HEADER_START+i);
   }
 
+  printha("Entry point:", header->entrypoint, 4);
+  if(header->entrypoint[0]==0x00 && header->entrypoint[1]==0xc3){
+    uint16_t to = (header->entrypoint[2]) | (header->entrypoint[3]<<8);
+    printf("  found standard NOP;JP pattern pointing to %sstandard location %#06x\n",(to==0x0150?"":"non-"),to);
+  }
+
+  printf("Logo: %s\n",(0==memcmp(header->logo,nintendo_logo,48)?"nintendo":"custom"));
+
   printf("Title: %s\n", header->title);
+
+  printhca("Manufacturer code:",header->mancode,4);
+
+  printf("CGB: %02x ",header->cgbflag[0]);
+  if((header->cgbflag[0] & _BV(7))!=0){
+    if(header->cgbflag[0]==0x80){
+      printf("supported\n");
+    }else if(header->cgbflag[0]==0xC0){
+      printf("required\n");
+    }else if( (header->cgbflag[0] & _BV(3))!=0 || (header->cgbflag[0] & _BV(2))!=0 ){
+      printf("unsupported, without palettes\n");
+    }
+  }else{
+    printf("unsupported, with palettes\n");
+  }
+
+  printf("SGB: %02x %sabled\n",header->sgbflag[0],(header->sgbflag[0]==0x30?"en":"dis"));
+
+  printf("Cartridge type: %02x ",header->carttype[0]);
+  if(0!=carttypes[header->carttype[0]])
+    printf("%s\n",carttypes[header->carttype[0]]);
+  else
+    printf("unknown\n");
+
+  printf("ROM size: %02x ",header->romsize[0]);
+  if(0!=rombanks[header->romsize[0]])
+    printf("%d banks = %dK\n",rombanks[header->romsize[0]],rombanks[header->romsize[0]]*32);
+  else
+    printf("unknown\n");
+
+  printf("RAM size: %02x ",header->ramsize[0]);
+  if(0==header->ramsize[0])
+    printf("none\n");
+  else if(0!=ramKs[header->ramsize[0]]){
+    printf("%dK",ramKs[header->ramsize[0]]);
+    if(0!=ram8Kbanks[header->ramsize[0]])
+      printf(" in %d 8K banks\n",ram8Kbanks[header->ramsize[0]]);
+    else
+      printf("without banking\n");
+  }else
+    printf("unknown\n");
+
+  printf("Destination code: %02x %s\n",header->destcode[0],(0==header->destcode[0]?"Japan":"Not Japan"));
+
+  printf("Licensee: %02x ",header->oldlicense[0]);
+  if(0x33==header->oldlicense[0]){
+    printf("new code: %02x ",header->newlicense[0]);
+    if(0!=newlicensees[header->newlicense[0]])
+      printf("%s\n",newlicensees[header->newlicense[0]]);
+    else
+      printf("unknown\n");
+  }else{
+    printf("old code\n");
+  }
+
+  printf("Mask ROM version: %02x\n",header->maskver[0]);
+
+  uint8_t chk=calc_hchk(header);
+  printf("Header checksum: %02x %scorrect, calculated %02x\n",header->hchksum[0],(header->hchksum[0] == chk ?"":"in"),chk);
+
+  printha("Global checksum:",header->gchksum,2);
 
   //write (fd, "hello!\n", 7);            // send 7 character greeting
 
