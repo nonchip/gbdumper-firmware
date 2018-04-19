@@ -168,7 +168,9 @@ int main(int argc, char* argv[]){
     printf("unknown\n");
 
   printf("ROM size: %02x ",header->romsize[0]);
-  if(0!=rombanks[header->romsize[0]])
+  if(0==header->romsize[0])
+    printf("32K without banking\n");
+  else if(0!=rombanks[header->romsize[0]])
     printf("%d banks = %dK\n",rombanks[header->romsize[0]],rombanks[header->romsize[0]]*32);
   else
     printf("unknown\n");
