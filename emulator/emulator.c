@@ -170,6 +170,13 @@ void emulator_think(){
     abort();
   }
 
+  //die if !CS or CLK is rising while !WR low
+  if(low(CMD__WR) && (edge_rising(CMD__CS) || edge_rising(CMD__CLK))){
+    fprintf(stderr, "MAGIC SMOKE: addr changed while ~WR low.\n");
+    fflush(stderr);
+    abort();
+  }
+
   //die if addr is changed while !WR low
   if((emulator_data->addr != emulator_data->latchaddr) && low(CMD__WR) ){
     fprintf(stderr, "MAGIC SMOKE: addr changed while ~WR low.\n");
